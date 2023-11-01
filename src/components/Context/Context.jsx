@@ -6,6 +6,8 @@ const Context = ({ children }) => {
   const words = ["probando", "comida", "programacion", "codigo"];
 
   const [word, setWord] = useState("");
+  const [letter, setLetter] = useState("");
+  const [correctChar, setCorrectChar] = useState(6);
 
   useEffect(() => {
     let newWord = words[Math.floor(Math.random() * words.length)];
@@ -14,7 +16,9 @@ const Context = ({ children }) => {
   }, []);
 
   return (
-    <wordContext.Provider value={{ word, setWord }}>
+    <wordContext.Provider
+      value={{ word, setWord, correctChar, setCorrectChar, letter, setLetter }}
+    >
       {children}
     </wordContext.Provider>
   );
