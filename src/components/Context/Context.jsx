@@ -3,9 +3,9 @@ import { createContext, useState, useEffect } from "react";
 export const wordContext = createContext("");
 
 const Context = ({ children }) => {
-  const words = ["probando", "comida", "programacion", "codigo"];
+  const words = ["probando la comida", "parangaricutirimicuaro", "ferrocarril", "estoico", "ana lava la tina", "sin querer queriendo"];
 
-  const [word, setWord] = useState("");
+  const [word, setWord] = useState('');
   const [letter, setLetter] = useState("");
   const [correctChar, setCorrectChar] = useState(6);
 

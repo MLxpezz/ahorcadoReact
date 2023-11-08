@@ -3,11 +3,11 @@ import { useContext, useEffect, useState } from "react";
 import { wordContext } from "../Context/Context";
 
 const LiContainer = styled.ul`
-  width: 100%;
+  padding: 10px;
   display: flex;
   justify-content: center;
   list-style: none;
-  gap: 5px;
+  gap: 10px;
 `;
 
 const Word = () => {
@@ -15,20 +15,28 @@ const Word = () => {
   const [updateWord, setUpdateWord] = useState([]);
 
   useEffect(() => {
-    let copyWord = word.split('').map(char => {
-        return char = '_';
+    let copyWord = word.split('').map(char => { 
+      if(char === ' ') {
+        return char = ' ';
+      }
+      return char = '_';
     });
     setUpdateWord(copyWord);
-    console.log(updateWord);
   }, [word]);
 
   useEffect(() => {
     let auxArr = [...updateWord];
+
     word.split('').forEach((c, index) => {
         if(c === letter) {
             auxArr[index] = letter;
-        }
-    })
+        } 
+    });
+
+    if(word !== '' && word === auxArr.join('')) {
+      alert("ganasteeee!!!")
+    }
+  
     setUpdateWord(auxArr);
   }, [letter]);
 
@@ -36,7 +44,7 @@ const Word = () => {
     <>
       <LiContainer>
         {updateWord.map((char, index) => {
-          return <p key={index}>{char}</p>;
+          return <li key={index}>{char}</li>;
         })}
       </LiContainer>
     </>
