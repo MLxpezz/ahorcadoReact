@@ -1,5 +1,10 @@
 import { useContext, useEffect } from "react";
 import { wordContext } from "../Context/Context";
+import styled from "styled-components";
+
+const Corpse = styled.p`
+
+`;
 
 const Body = () => {
   const { correctChar } = useContext(wordContext);
@@ -14,7 +19,7 @@ const Body = () => {
 
   }, [correctChar]);
 
-  return <p>{body.split("").slice(0, correctChar).join("-")}</p>;
+  return <Corpse>{body.split("").slice(0, correctChar).join("-")}</Corpse>;
 };
 
 export default Body;

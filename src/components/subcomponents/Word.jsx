@@ -10,6 +10,13 @@ const LiContainer = styled.ul`
   gap: 10px;
 `;
 
+const Li = styled.li`
+  border: 1px solid #DB2EF2;
+  border-radius: 2px;
+  color: #DB2EF2;
+  padding: 2px;
+`
+
 const Word = () => {
   const { word, letter } = useContext(wordContext);
   const [updateWord, setUpdateWord] = useState([]);
@@ -44,7 +51,7 @@ const Word = () => {
     <>
       <LiContainer>
         {updateWord.map((char, index) => {
-          return <li key={index}>{char}</li>;
+          return <Li key={index}>{char}</Li>;
         })}
       </LiContainer>
     </>
