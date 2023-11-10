@@ -1,9 +1,10 @@
 import { useContext, useEffect } from "react";
 import { wordContext } from "../Context/Context";
 import styled from "styled-components";
+import pista from '../../assets/pista.png'
 
-const Corpse = styled.p`
-
+const Corpse = styled.img`
+  width: 30%;
 `;
 
 const Body = () => {
@@ -12,14 +13,14 @@ const Body = () => {
   let body = "cuerpo";
 
   useEffect(() => {
-
-    if(correctChar === 0) {
-      alert("Perdistee!!!")
+    if (correctChar === 0) {
+      alert("Perdistee!!!");
     }
-
   }, [correctChar]);
 
-  return <Corpse>{body.split("").slice(0, correctChar).join("-")}</Corpse>;
+  return <>
+    <Corpse src={pista}/>
+  </>;
 };
 
 export default Body;
