@@ -11,7 +11,7 @@ const Context = ({ children }) => {
   const [isWin, setIsWin] = useState(false);
   const [buttonDisabled, setButtonDisabled] = useState(true);
 
-  const randomWord = () => {
+  const newWord = () => {
     let newWord = words[Math.floor(Math.random() * words.length)];
     setWord(newWord);
     setIsWin(false);
@@ -21,12 +21,13 @@ const Context = ({ children }) => {
   }
 
   useEffect(() => {
-    randomWord();
+    newWord();
+    setButtonDisabled(true);
   }, []);
 
   return (
     <wordContext.Provider
-      value={{ word, setWord, correctChar, setCorrectChar, letter, setLetter, randomWord, isWin, setIsWin, buttonDisabled, setButtonDisabled }}
+      value={{ word, setWord, correctChar, setCorrectChar, letter, setLetter, newWord, isWin, setIsWin, buttonDisabled, setButtonDisabled }}
     >
       {children}
     </wordContext.Provider>

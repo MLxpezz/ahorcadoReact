@@ -4,7 +4,7 @@ import styled from "styled-components";
 import pista from '../../assets/pista.png'
 
 const Corpse = styled.img`
-  width: 30%;
+  width: 20%;
 `;
 
 const Body = () => {

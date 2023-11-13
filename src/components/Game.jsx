@@ -1,13 +1,14 @@
 import Body from "./subcomponents/Body";
 import Word from "./subcomponents/Word";
 import Input from "./subcomponents/Input";
-import PlayButton from "./subcomponents/PlayButton";
+import NewWord from "./subcomponents/NewWord";
 import styled from "styled-components";
 import { useContext } from "react";
 import { wordContext } from "./Context/Context";
 
 const Container = styled.main`
   width: 100%;
+  min-height: 100vh;
   height: auto;
   display: flex;
   flex-direction: column;
@@ -34,7 +35,7 @@ const Game = () => {
       <Body />
       <Word />
       <Input />
-      {(isWin || correctChar === 0) && <PlayButton />}
+      {(isWin || correctChar === 0) && <NewWord />}
     </Container>
   );
 };
