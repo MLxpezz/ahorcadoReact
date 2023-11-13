@@ -32,8 +32,6 @@ const Input = () => {
   const { word, setLetter, setCorrectChar, correctChar } =
     useContext(wordContext);
 
-  const letters = "abcdefghijklmnñopqrstuvwxyz";
-
   useEffect(() => {
     if (char !== "") {
       let charMiss = false;
@@ -53,26 +51,26 @@ const Input = () => {
     }
   }, [char]);
 
-  const handleInput = (e) => {
+  const handleButton = (e) => {
     setChar(e.target.innerHTML);
-    console.log(e.target.innerHTML);
+    e.target.disabled = buttonDisabled;
   };
 
   return (
-    <Container>
+    <ButtonsContainer>
       {letters.split("").map((btn) => {
         return (
-          <LetterButton
-            onClick={(e) => {
-              handleInput(e);
-            }}
+          <Button
             key={btn}
+            onClick={(e) => {
+              handleButton(e);
+            }}
           >
             {btn}
-          </LetterButton>
+          </Button>
         );
       })}
-    </Container>
+    </ButtonsContainer>
   );
 };
 

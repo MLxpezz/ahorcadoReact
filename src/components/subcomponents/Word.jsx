@@ -11,20 +11,21 @@ const LiContainer = styled.ul`
 `;
 
 const Li = styled.li`
-  color: #DB2EF2;
-  padding: 2px;
-`
+  color: #db2ef2;
+  padding: 7px;
+  font-size: 20px;
+`;
 
 const Word = () => {
   const { word, letter, setIsWin } = useContext(wordContext);
   const [updateWord, setUpdateWord] = useState([]);
 
   useEffect(() => {
-    let copyWord = word.split('').map(char => { 
-      if(char === ' ') {
-        return char = ' ';
+    let copyWord = word.split("").map((char) => {
+      if (char === " ") {
+        return (char = " ");
       }
-      return char = '_';
+      return (char = "_");
     });
     setUpdateWord(copyWord);
   }, [word]);
@@ -32,17 +33,18 @@ const Word = () => {
   useEffect(() => {
     let auxArr = [...updateWord];
 
-    word.split('').forEach((c, index) => {
-        if(c === letter) {
-            auxArr[index] = letter;
-        } 
+    word.split("").forEach((c, index) => {
+      if (c === letter) {
+        auxArr[index] = letter;
+      }
     });
 
-    if(word !== '' && word === auxArr.join('')) {
+    if (word !== "" && word === auxArr.join("")) {
       setIsWin(true);
-      alert("ganasteeee!!!")
+      alert("ganasteeee!!!");
+      setIsWin(true);
     }
-  
+
     setUpdateWord(auxArr);
   }, [letter]);
 
@@ -50,7 +52,7 @@ const Word = () => {
     <>
       <LiContainer>
         {updateWord.map((char, index) => {
-          return <Li key={index}>{char}</Li>;
+          return <Li key={index} $empty={char}>{char}</Li>;
         })}
       </LiContainer>
     </>

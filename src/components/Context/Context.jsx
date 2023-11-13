@@ -9,22 +9,24 @@ const Context = ({ children }) => {
   const [letter, setLetter] = useState("");
   const [correctChar, setCorrectChar] = useState(6);
   const [isWin, setIsWin] = useState(false);
+  const [buttonDisabled, setButtonDisabled] = useState(true);
 
-  const newWord = () => {
+  const randomWord = () => {
     let newWord = words[Math.floor(Math.random() * words.length)];
     setWord(newWord);
     setIsWin(false);
     setCorrectChar(6);
+    setButtonDisabled(false);
     console.log(word);
   }
 
   useEffect(() => {
-    newWord();
+    randomWord();
   }, []);
 
   return (
     <wordContext.Provider
-      value={{ word, setWord, correctChar, setCorrectChar, letter, setLetter, newWord, isWin, setIsWin }}
+      value={{ word, setWord, correctChar, setCorrectChar, letter, setLetter, randomWord, isWin, setIsWin, buttonDisabled, setButtonDisabled }}
     >
       {children}
     </wordContext.Provider>
