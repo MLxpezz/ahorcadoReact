@@ -11,14 +11,12 @@ const LiContainer = styled.ul`
 `;
 
 const Li = styled.li`
-  border: 1px solid #DB2EF2;
-  border-radius: 2px;
   color: #DB2EF2;
   padding: 2px;
 `
 
 const Word = () => {
-  const { word, letter } = useContext(wordContext);
+  const { word, letter, setIsWin } = useContext(wordContext);
   const [updateWord, setUpdateWord] = useState([]);
 
   useEffect(() => {
@@ -41,6 +39,7 @@ const Word = () => {
     });
 
     if(word !== '' && word === auxArr.join('')) {
+      setIsWin(true);
       alert("ganasteeee!!!")
     }
   

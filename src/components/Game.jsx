@@ -1,7 +1,10 @@
 import Body from "./subcomponents/Body";
 import Word from "./subcomponents/Word";
 import Input from "./subcomponents/Input";
+import NewWord from "./subcomponents/NewWord";
 import styled from "styled-components";
+import { useContext } from "react";
+import { wordContext } from "./Context/Context";
 
 const Container = styled.main`
   width: 100%;
@@ -22,12 +25,16 @@ const Container = styled.main`
 
 
 const Game = () => {
+
+  const {isWin, correctChar} = useContext(wordContext);
+
   return (
     <Container>
       <h1>Ahorcado</h1>
       <Body />
       <Word />
       <Input />
+      {(isWin || correctChar === 0) && <NewWord />}
     </Container>
   );
 };
