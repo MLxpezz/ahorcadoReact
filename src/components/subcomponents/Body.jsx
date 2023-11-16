@@ -1,16 +1,13 @@
 import { useContext, useEffect } from "react";
 import { wordContext } from "../Context/Context";
 import styled from "styled-components";
-import pista from '../../assets/pista.png'
 
 const Corpse = styled.img`
-  width: 20%;
+  width: 30%;
 `;
 
 const Body = () => {
   const { correctChar } = useContext(wordContext);
-
-  let body = "cuerpo";
 
   useEffect(() => {
     if (correctChar === 0) {
@@ -19,7 +16,7 @@ const Body = () => {
   }, [correctChar]);
 
   return <>
-    <Corpse src={pista}/>
+    <Corpse src={`/src/assets/${correctChar}.png`}/>
   </>;
 };
 

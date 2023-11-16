@@ -9,20 +9,18 @@ const Context = ({ children }) => {
   const [letter, setLetter] = useState("");
   const [correctChar, setCorrectChar] = useState(6);
   const [isWin, setIsWin] = useState(false);
-  const [buttonDisabled, setButtonDisabled] = useState(true);
+  const [buttonDisabled, setButtonDisabled] = useState(false);
 
   const newWord = () => {
     let newWord = words[Math.floor(Math.random() * words.length)];
     setWord(newWord);
     setIsWin(false);
-    setCorrectChar(6);
     setButtonDisabled(false);
-    console.log(word);
+    setCorrectChar(6);
   }
 
   useEffect(() => {
     newWord();
-    setButtonDisabled(true);
   }, []);
 
   return (
