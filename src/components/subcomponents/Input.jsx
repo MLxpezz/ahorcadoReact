@@ -9,6 +9,10 @@ const ButtonsContainer = styled.div`
   gap: 5px;
   align-items: center;
   justify-content: center;
+
+  @media screen and (max-width: 912px){
+    width: 100%;
+  }
 `;
 
 const LetterButton = styled.button`
@@ -29,6 +33,11 @@ const LetterButton = styled.button`
 
   &:disabled {
     box-shadow: 0 0 0 0;
+  }
+
+  @media screen and (max-width: 912px){
+    height: 4em;
+    width: 5rem;
   }
 `;
 

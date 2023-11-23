@@ -5,6 +5,10 @@ import pista from '../../assets/pista.png'
 
 const Corpse = styled.img`
   width: 20%;
+
+  @media screen and (max-width: 912px){
+    width: 45%;
+  }
 `;
 
 const Body = () => {

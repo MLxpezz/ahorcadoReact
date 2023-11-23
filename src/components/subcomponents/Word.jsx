@@ -5,9 +5,11 @@ import { wordContext } from "../Context/Context";
 const LiContainer = styled.ul`
   padding: 10px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   list-style: none;
   gap: 10px;
+  padding: 0;
 `;
 
 const Li = styled.li`

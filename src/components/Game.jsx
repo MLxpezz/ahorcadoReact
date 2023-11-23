@@ -14,7 +14,7 @@ const Container = styled.main`
   flex-direction: column;
   align-items: center;
   background-color: #121126;
-  gap: 60px;
+  gap: 35px;
 
   & h1 {
     color: #DB2EF2;
@@ -22,6 +22,8 @@ const Container = styled.main`
     letter-spacing: 10px;
   }
 `;
+
+
 
 
 
