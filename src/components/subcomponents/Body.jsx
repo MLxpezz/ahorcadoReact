@@ -24,7 +24,7 @@ const Body = () => {
   }, [correctChar]);
 
   return <>
-    <Corpse src={`/src/assets/${correctChar}.png`}/>
+    <Corpse src={`../../assets/${correctChar}.png`}/>
   </>;
 };
 
