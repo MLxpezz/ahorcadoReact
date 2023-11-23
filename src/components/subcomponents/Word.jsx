@@ -19,7 +19,7 @@ const Li = styled.li`
 `;
 
 const Word = () => {
-  const { word, letter, setIsWin } = useContext(wordContext);
+  const { word, letter, setIsWin, correctChar } = useContext(wordContext);
   const [updateWord, setUpdateWord] = useState([]);
 
   useEffect(() => {
@@ -45,10 +45,16 @@ const Word = () => {
       setIsWin(true);
       alert("ganasteeee!!!");
       setIsWin(true);
-    }
+    } 
 
     setUpdateWord(auxArr);
   }, [letter]);
+
+  useEffect(() => {
+    if(correctChar === 0) {
+      setUpdateWord(word.split(''));
+    }
+  }, [correctChar]);
 
   return (
     <>

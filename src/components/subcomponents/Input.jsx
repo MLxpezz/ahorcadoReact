@@ -43,7 +43,7 @@ const LetterButton = styled.button`
 
 const Input = () => {
   const [char, setChar] = useState("");
-  const { word, setLetter, setCorrectChar, correctChar, buttonDisabled } =
+  const { word, setLetter, setCorrectChar, correctChar, setButtonDisabled, buttonDisabled } =
     useContext(wordContext);
 
   const letters = "abcdefghijklmnñopqrstuvwxyz";
@@ -62,15 +62,18 @@ const Input = () => {
       if (charMiss === false) {
         setCorrectChar((life) => life - 1);
       }
-
-      console.log(correctChar);
     }
   }, [char]);
 
+  useEffect(() => {
+    if(correctChar === 0) {
+      setButtonDisabled(true);
+    }
+  }, [correctChar])
+
   const handleButton = (e) => {
     setChar(e.target.innerHTML);
-    e.target.disabled = buttonDisabled;
-    console.log(buttonDisabled);
+    e.target.disabled = !buttonDisabled;
   };
 
   return (
@@ -78,7 +81,8 @@ const Input = () => {
       {letters.split("").map((btn) => {
         return (
           <LetterButton
-            $pulsado={!buttonDisabled}
+            $pulsado={buttonDisabled}
+            disabled={buttonDisabled}
             key={btn}
             onClick={(e) => {
               handleButton(e);
