@@ -3,10 +3,14 @@ import { wordContext } from "../Context/Context";
 import styled from "styled-components";
 
 const Corpse = styled.img`
-  width: 20%;
+  width: 30%;
 
   @media screen and (max-width: 912px){
-    width: 45%;
+    width: 50vw;
+  }
+
+  @media screen and (max-width: 412px){
+    width: 58vw;
   }
 `;
 

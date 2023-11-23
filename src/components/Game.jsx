@@ -36,8 +36,8 @@ const Game = () => {
       <h1>Ahorcado</h1>
       <Body />
       <Word />
-      <Input />
       {(isWin || correctChar === 0) && <NewWord />}
+      <Input />
     </Container>
   );
 };

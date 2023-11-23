@@ -36,8 +36,8 @@ const LetterButton = styled.button`
   }
 
   @media screen and (max-width: 912px){
-    height: 4em;
-    width: 5rem;
+    height: 2.5em;
+    width: 4rem;
   }
 `;
 
