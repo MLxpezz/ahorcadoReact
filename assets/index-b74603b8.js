@@ -50,7 +50,7 @@ Error generating stack: `+o.message+`
   @media screen and (max-width: 412px){
     width: 58vw;
   }
-`,Pm=()=>{const{correctChar:e}=A.useContext(An);return A.useEffect(()=>{e===0&&alert("Perdistee!!!")},[e]),U.jsx(U.Fragment,{children:U.jsx(_m,{src:`/${e}.png`})})},Nm=dt.ul`
+`,Pm=()=>{const{correctChar:e}=A.useContext(An);return A.useEffect(()=>{e===0&&alert("Perdistee!!!")},[e]),U.jsx(U.Fragment,{children:U.jsx(_m,{src:`./${e}.png`})})},Nm=dt.ul`
   padding: 10px;
   display: flex;
   flex-wrap: wrap;
