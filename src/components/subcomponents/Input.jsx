@@ -43,7 +43,7 @@ const LetterButton = styled.button`
 
 const Input = () => {
   const [char, setChar] = useState("");
-  const { word, setLetter, setCorrectChar, correctChar, setButtonDisabled, buttonDisabled } =
+  const { word, setLetter, setCorrectChar, correctChar, setButtonDisabled, buttonDisabled, isWin} =
     useContext(wordContext);
 
   const letters = "abcdefghijklmnñopqrstuvwxyz";
@@ -69,7 +69,10 @@ const Input = () => {
     if(correctChar === 0) {
       setButtonDisabled(true);
     }
-  }, [correctChar])
+    if(isWin) {
+      setButtonDisabled(true);
+    }
+  }, [correctChar, isWin])
 
   const handleButton = (e) => {
     setChar(e.target.innerHTML);

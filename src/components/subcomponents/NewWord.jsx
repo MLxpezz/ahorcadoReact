@@ -9,9 +9,11 @@ const Button = styled.button`
     border: 3px solid #db2ef2;
     color: #db2ef2;
     box-shadow: inset 1px 1px 11px 2px #db2ef2;
+    transition: all 0.5s;
 
     &:hover {
         cursor: pointer;
+        transform: scale(1.1);
     }
 `
 

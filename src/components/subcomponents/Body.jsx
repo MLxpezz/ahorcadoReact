@@ -15,13 +15,19 @@ const Corpse = styled.img`
 `;
 
 const Body = () => {
-  const { correctChar } = useContext(wordContext);
+  const { correctChar, isWin } = useContext(wordContext);
 
   useEffect(() => {
     if (correctChar === 0) {
       alert("Perdistee!!!");
     }
   }, [correctChar]);
+
+  if(correctChar === 0) {
+    return <h1>PERDISTE!!</h1>
+  } else if(isWin) {
+    return <h1>GANASTE!</h1>
+  }
 
   return <>
     <Corpse src={`./${correctChar}.png`}/>

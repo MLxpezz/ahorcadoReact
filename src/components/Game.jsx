@@ -3,7 +3,7 @@ import Word from "./subcomponents/Word";
 import Input from "./subcomponents/Input";
 import NewWord from "./subcomponents/NewWord";
 import styled from "styled-components";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { wordContext } from "./Context/Context";
 
 const Container = styled.main`
@@ -22,10 +22,6 @@ const Container = styled.main`
     letter-spacing: 10px;
   }
 `;
-
-
-
-
 
 const Game = () => {
 
