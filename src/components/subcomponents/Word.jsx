@@ -43,8 +43,6 @@ const Word = () => {
 
     if (word !== "" && word === auxArr.join("")) {
       setIsWin(true);
-      alert("ganasteeee!!!");
-      setIsWin(true);
     } 
 
     setUpdateWord(auxArr);
